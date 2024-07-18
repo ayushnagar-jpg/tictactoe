@@ -1,0 +1,217 @@
+/* *{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color:cadetblue;
+    text-align: center;
+    
+}
+
+.container{
+    height: 400px;
+    
+    display: flex;
+    /* flex-wrap: wrap; 
+    justify-content: center;
+    align-items: center;
+}
+
+.game{
+    height: 300px;
+    width: 350px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.box{
+    height: 100px;
+    width: 100px;
+    border-radius: 20px;  
+    border: none;
+    box-shadow: 3px 3px 3px black;
+    font-size: 70px;
+    color: blueviolet;
+    background-color: blanchedalmond;
+}
+
+#reset-btn{
+    padding: 15px;
+    font-size: 22px;
+    background-color:black;
+    color: white;
+    border-radius: 20px;
+    border: none;
+}
+
+#new-btn{
+    padding: 15px;
+    font-size: 22px;
+    background-color:black;
+    color: white;
+    border-radius: 20px;
+    border: none;
+}
+
+#msg{
+    color: whitesmoke;
+    font-size: 40px;
+}
+
+.msg-container{
+    height: 120px;
+}
+.hide{
+    display: none;
+} */
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-image: linear-gradient(to bottom, #3498db, #2980b9); /* add a gradient background */
+    text-align: center;
+    font-family: Arial, sans-serif;
+    transition: background-color 0.5s;
+  }
+  
+  .container {
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* add a box shadow */
+    border-radius: 20px; /* add a border radius */
+  }
+  
+  .game {
+    height: 300px;
+    width: 350px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    transform-style: preserve-3d;
+    background-image: linear-gradient(to bottom, #f7f7f7, #e7e7e7); /* add a gradient background */
+    border-radius: 20px; /* add a border radius */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* add a box shadow */
+  }
+  
+  .box {
+    height: 100px;
+    width: 100px;
+    border-radius: 20px;
+    border: none;
+    box-shadow: 3px 3px 3px black;
+    font-size: 70px;
+    color: blueviolet;
+    background-color: blanchedalmond;
+    transition: background-color 0.5s, box-shadow 0.5s;
+    animation: boxAnimation 1s ease-in-out infinite; /* add animation to box */
+    cursor: pointer; /* add a cursor pointer */
+  }
+  
+  @keyframes boxAnimation {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  .box:hover {
+    background-color: #ffe6cc;
+    box-shadow: 5px 5px 5px black;
+    animation: hoverAnimation 0.5s ease-in-out; /* add animation on hover */
+  }
+  
+  @keyframes hoverAnimation {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  .button-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  #reset-btn, #new-btn {
+    padding: 15px;
+    font-size: 22px;
+    background-color: #4CAF50; /* change button color */
+    color: white;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.5s;
+    animation: buttonAnimation 1s ease-in-out infinite; /* add animation to buttons */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* add a box shadow */
+  }
+  
+  @keyframes buttonAnimation {
+    0% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(10px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
+  #reset-btn:hover, #new-btn:hover {
+    background-color: #3e8e41; /* change hover color */
+    animation: hoverButtonAnimation 0.5s ease-in-out; /* add animation on hover */
+  }
+  
+  @keyframes hoverButtonAnimation {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.1);
+    }
+  }
+  
+  #msg {
+    color: whitesmoke;
+    font-size: 40px;
+    text-shadow: 2px 2px 2px black;
+  }
+  
+  .msg-container {
+    height: 120px;
+  }
+  
+  .hide {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s;
+  }
+  
+  .show {
+    display: block;
+    opacity: 1;
+  }
